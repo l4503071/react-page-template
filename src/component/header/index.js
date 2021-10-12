@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-// import "./index.scss"
+import "./index.scss"
 
 export default function Header() {
   const menuList = useSelector((state) => state.common.menuList);
