@@ -1,9 +1,16 @@
 import Mock from "mockjs";
-console.log(1);
-Mock.mock(/getMenuList/, 'get', () => {
-  console.log(2);
+Mock.mock(/getMenuList/, "get", () => {
   return {
     code: 0,
-    data: [],
+    data: [
+      {
+        name: "首页",
+        path: "/",
+      },
+      {
+        name: "应用中心",
+        path: "/application",
+      },
+    ],
   };
 });
