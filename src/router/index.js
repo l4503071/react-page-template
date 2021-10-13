@@ -7,7 +7,7 @@ export default function Layout() {
       {routes.map((item) => {
         return (
           <Route key={item.path} path={item.path} exact={item.exact}>
-            {item.component}
+            <item.component />
           </Route>
         );
       })}

@@ -1,11 +1,10 @@
-import "./index.css";
+import "./index.scss";
 
-function Home() {
+export default function Home() {
+  console.log("render home");
   return (
     <div className="App">
       <h1>Home</h1>
     </div>
   );
 }
-
-export default Home;
