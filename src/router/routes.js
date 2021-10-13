@@ -1,17 +1,16 @@
-import Home from "../page/home";
-import Application from "../page/application";
+import loadable from "../util/loadable";
 
 const routes = [
   {
     path: "/",
     exact: true,
-    component: Home,
+    component: loadable(() => import("../page/home")),
   },
   {
     path: "/application",
     exact: true,
-    component: Application,
-  }
+    component: loadable(() => import("../page/application")),
+  },
 ];
 
 export default routes;
