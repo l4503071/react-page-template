@@ -7,7 +7,7 @@ export const homeSlice = createSlice({
   },
   reducers: {
     setCardList(state, action) {
-      state.menuList = action?.payload?.list ?? [];
+      state.cardList = action?.payload?.list ?? [];
     },
   },
 });

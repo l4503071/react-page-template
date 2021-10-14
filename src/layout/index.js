@@ -15,6 +15,7 @@ export default function Layout() {
       }
       dispatch(setMenuList({ list: res?.data }));
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <>

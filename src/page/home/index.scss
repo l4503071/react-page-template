@@ -1,0 +1,10 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  &__card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
