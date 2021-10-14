@@ -4,6 +4,7 @@ import Router from "../router";
 import Header from "../component/header";
 import axios from "../util/http";
 import { setMenuList } from "../store/commonReducer";
+import "./index.scss";
 
 export default function Layout() {
   console.log("render layout");
@@ -15,12 +16,12 @@ export default function Layout() {
       }
       dispatch(setMenuList({ list: res?.data }));
     });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <>
+    <div className="app">
       <Header />
       <Router />
-    </>
+    </div>
   );
 }

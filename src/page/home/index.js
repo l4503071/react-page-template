@@ -26,11 +26,14 @@ export default function Home() {
         {cardList.map((card, index) => {
           return <Card key={index} name={card.name} count={card.count} />;
         })}
-        {Array(10)
-          .fill(true)
-          .map((_, index) => (
-            <div key={index} style={{ width: "300px", height: 0, margin: "8px" }} />
-          ))}
+        {
+          // 首/末 行对齐，补齐数量大于屏幕显示最大数量即可
+          Array(10)
+            .fill(true)
+            .map((_, index) => (
+              <div key={index} style={{ width: "316px", height: 0 }} />
+            ))
+        }
       </div>
     </div>
   );
