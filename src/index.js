@@ -5,6 +5,7 @@ import store from "./store";
 import { Provider } from "react-redux";
 import "normalize.css";
 import "./index.scss";
+import "antd/dist/antd.css";
 import "./mock";
 
 ReactDOM.render(

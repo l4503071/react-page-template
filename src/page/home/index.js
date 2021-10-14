@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "../../util/http";
 import { setCardList } from "./meta/homeReducer";
 import Card from "./component/card";
+import Filter from "./component/filter";
 import "./index.scss";
 
 export default function Home() {
@@ -11,17 +12,30 @@ export default function Home() {
     return state.home.cardList;
   });
   const dispatch = useDispatch();
-  useEffect(() => {
+  const getCardList = useCallback(() => {
     axios.get("/getCardList").then((res) => {
       if (res?.code !== 0) {
         return;
       }
       dispatch(setCardList({ list: res?.data }));
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dispatch]);
+
+  useEffect(getCardList, [getCardList]);
+
+  function onClickChange() {
+    getCardList();
+  }
+
+  function onChangeFilter(event) {
+    console.log(event.target.value);
+  }
+
   return (
     <div className="home">
+      <div className="home__filter">
+        <Filter onClick={onClickChange} onChange={onChangeFilter} />
+      </div>
       <div className="home__card">
         {cardList.map((card, index) => {
           return <Card key={index} name={card.name} count={card.count} />;
