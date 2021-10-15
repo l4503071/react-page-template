@@ -1,6 +1,7 @@
+import { memo } from "react";
 import "./index.scss";
 
-function Card({name, count}) {
+function Card({ name, count }) {
   console.log("render card");
   return (
     <div className="card">
@@ -10,4 +11,4 @@ function Card({name, count}) {
   );
 }
 
-export default Card;
+export default memo(Card);

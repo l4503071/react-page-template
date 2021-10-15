@@ -1,7 +1,7 @@
 import { useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "../../util/http";
-import { setCardList } from "./meta/homeReducer";
+import { setCardList, setFilter } from "./meta/homeReducer";
 import Card from "./component/card";
 import Filter from "./component/filter";
 import "./index.scss";
@@ -9,7 +9,10 @@ import "./index.scss";
 export default function Home() {
   console.log("render home");
   const cardList = useSelector((state) => {
-    return state.home.cardList;
+    return state.home.cardList.filter((card) => {
+      const str = "" + card.name + card.count;
+      return str.includes(state.home.filter);
+    });
   });
   const dispatch = useDispatch();
   const getCardList = useCallback(() => {
@@ -23,13 +26,16 @@ export default function Home() {
 
   useEffect(getCardList, [getCardList]);
 
-  function onClickChange() {
+  const onClickChange = useCallback(() => {
     getCardList();
-  }
+  }, [getCardList]);
 
-  function onChangeFilter(event) {
-    console.log(event.target.value);
-  }
+  const onChangeFilter = useCallback(
+    (event) => {
+      dispatch(setFilter({ filter: event.target.value }));
+    },
+    [dispatch]
+  );
 
   return (
     <div className="home">
@@ -38,7 +44,7 @@ export default function Home() {
       </div>
       <div className="home__card">
         {cardList.map((card, index) => {
-          return <Card key={index} name={card.name} count={card.count} />;
+          return <Card key={card.name + card.count} name={card.name} count={card.count} />;
         })}
         {
           // 首/末 行对齐，补齐数量大于屏幕显示最大数量即可

@@ -1,8 +1,9 @@
 import "./index.scss";
 import { Button, Input } from "antd";
+import { memo } from "react";
 
 function Filter({ onClick, onChange }) {
-  console.log("render card");
+  console.log("render filter");
   return (
     <div className="filter">
       <Input style={{ width: 400 }} onChange={onChange} placeholder="请输入过滤选项" />
@@ -13,4 +14,4 @@ function Filter({ onClick, onChange }) {
   );
 }
 
-export default Filter;
+export default memo(Filter);
