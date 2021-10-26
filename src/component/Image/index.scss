@@ -1,5 +1,6 @@
 .image {
   &__real {
+    transition: opacity 1s;
     &--hidden {
       position: absolute;
       opacity: 0;
