@@ -10,7 +10,7 @@ Mock.mock(/getMenuList/, "get", () => {
       {
         name: "应用中心",
         path: "/application",
-      },
+      }
     ],
   };
 });

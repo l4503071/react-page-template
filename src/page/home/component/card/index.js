@@ -1,4 +1,5 @@
 import { memo } from "react";
+import PropTypes from "prop-types";
 import "./index.scss";
 import Image from "@/component/Image";
 
@@ -12,5 +13,11 @@ function Card({ name, count, img }) {
     </div>
   );
 }
+
+Card.propTypes = {
+  name: PropTypes.string,
+  count: PropTypes.number,
+  img: PropTypes.string,
+};
 
 export default memo(Card);

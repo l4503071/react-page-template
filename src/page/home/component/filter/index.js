@@ -1,6 +1,7 @@
+import { memo } from "react";
+import PropTypes from "prop-types";
 import "./index.scss";
 import { Button, Input } from "antd";
-import { memo } from "react";
 
 function Filter({ onClick, onChange }) {
   console.log("render filter");
@@ -13,5 +14,10 @@ function Filter({ onClick, onChange }) {
     </div>
   );
 }
+
+Filter.propTypes = {
+  onClick: PropTypes.func,
+  onChange: PropTypes.func,
+};
 
 export default memo(Filter);

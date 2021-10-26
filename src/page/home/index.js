@@ -43,7 +43,7 @@ export default function Home() {
         <Filter onClick={onClickChange} onChange={onChangeFilter} />
       </div>
       <div className="home__card">
-        {cardList.map((card, index) => {
+        {cardList.map((card) => {
           return <Card key={card.name + card.count} name={card.name} count={card.count} img={card.image} />;
         })}
         {

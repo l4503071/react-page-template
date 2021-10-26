@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import "./index.scss";
 import { useState, memo } from "react";
 import cns from "classnames";
@@ -19,5 +20,10 @@ function Image({ src, className, ...otherProps }) {
     </>
   );
 }
+
+Image.propTypes = {
+  src: PropTypes.string,
+  className: PropTypes.string,
+};
 
 export default memo(Image);

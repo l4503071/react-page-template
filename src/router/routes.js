@@ -10,7 +10,7 @@ const routes = [
     path: "/application",
     exact: true,
     component: loadable(() => import("../page/application")),
-  },
+  }
 ];
 
 export default routes;
