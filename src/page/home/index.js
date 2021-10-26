@@ -44,7 +44,7 @@ export default function Home() {
       </div>
       <div className="home__card">
         {cardList.map((card, index) => {
-          return <Card key={card.name + card.count} name={card.name} count={card.count} />;
+          return <Card key={card.name + card.count} name={card.name} count={card.count} img={card.image} />;
         })}
         {
           // 首/末 行对齐，补齐数量大于屏幕显示最大数量即可
