@@ -1,5 +1,5 @@
 import common from "./commonReducer";
-import home from "../page/home/meta/homeReducer";
+import home from "@/page/home/meta/homeReducer";
 
 const _export = {
   common,

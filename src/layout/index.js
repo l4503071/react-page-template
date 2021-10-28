@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import Router from "../router";
-import Header from "../component/header";
-import axios from "../util/http";
-import { setMenuList } from "../store/commonReducer";
+import Router from "@/router";
+import Header from "@/component/header";
+import axios from "@/util/http";
+import { setMenuList } from "@/store/commonReducer";
 import "./index.scss";
 
 export default function Layout() {

@@ -1,4 +1,4 @@
-import loadable from "../util/loadable";
+import loadable from "@/util/loadable";
 
 const routes = [
   {
