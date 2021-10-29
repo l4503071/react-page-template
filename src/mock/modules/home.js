@@ -6,6 +6,7 @@ Mock.mock(/getCardList/, "get", {
     {
       name: "@province",
       image: Random.image("200x200"),
+      color: "@color",
       "count|0-100": 0,
     }
   ],

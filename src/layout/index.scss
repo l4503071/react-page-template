@@ -1,4 +1,12 @@
 .app {
   background-color: rgba(242, 242, 242, 1);
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  &__page {
+    height: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
 }

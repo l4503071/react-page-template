@@ -20,7 +20,9 @@ export default function Layout() {
   return (
     <div className="app">
       <Header />
-      <Router />
+      <div className="app__page">
+        <Router />
+      </div>
     </div>
   );
 }

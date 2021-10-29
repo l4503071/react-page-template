@@ -9,7 +9,7 @@ function Card({ name, count, img }) {
     <div className="card">
       <div className="card__name">{name}</div>
       <div className="card__count">{count}</div>
-      <Image className="card__img" src={img} />
+      <Image className="card__img" src={img} lazy />
     </div>
   );
 }

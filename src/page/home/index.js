@@ -4,6 +4,7 @@ import axios from "@/util/http";
 import { setCardList, setFilter } from "./meta/homeReducer";
 import Card from "./component/card";
 import Filter from "./component/filter";
+import { Badge } from "antd";
 import "./index.scss";
 
 export default function Home() {
@@ -43,9 +44,10 @@ export default function Home() {
         <Filter onClick={onClickChange} onChange={onChangeFilter} />
       </div>
       <div className="home__card">
+        <Badge count={cardList.length} className="home__card__badge" />
         {cardList.map((card) => {
           // card.image 追加 query，是为了测试图片的 懒加载功能
-          return <Card key={card.name + card.count} name={card.name} count={card.count} img={card.image + `?v=${Math.random()}`} />;
+          return <Card key={card.name + card.count} name={card.name} count={card.count} img={card.image + "/" + card.color.slice(1)} />;
         })}
         {
           // 首/末 行对齐，补齐数量大于屏幕显示最大数量即可
