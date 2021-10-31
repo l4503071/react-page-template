@@ -1,0 +1,1 @@
+(this["webpackJsonpperformance-optimization"]=this["webpackJsonpperformance-optimization"]||[]).push([[5],{118:function(i,n,e){},127:function(i,n,e){"use strict";e.r(n);e(118);var t=e(2);n.default=function(){return console.log("render application"),Object(t.jsx)("div",{className:"App",children:Object(t.jsx)("h1",{children:"Application"})})}}}]);
