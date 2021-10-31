@@ -1,5 +1,7 @@
 # 项目模板
-React 项目开发模版，实现各种性能优化方案；
+React 项目开发模版，实现各种性能优化方案。
+
+> 访问地址: https://l4503071.github.io/react-page-template
 ## 运行步骤
 1. git clone
 2. npm i
@@ -12,3 +14,4 @@ React 项目开发模版，实现各种性能优化方案；
 - 支持 eslint 校验 和 git 提交校验 eslint；
 - 支持数据 mock；
 - 支持路由懒加载
+
