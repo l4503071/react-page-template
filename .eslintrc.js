@@ -28,6 +28,8 @@ module.exports = {
     "comma-dangle": [2, {
       objects: "always-multiline",
     }],
+    "object-curly-spacing": [2, "always"],
+    "comma-spacing": [2, { "after": true }],
   },
   "settings": {
     "react": {
