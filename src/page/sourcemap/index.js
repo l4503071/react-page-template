@@ -2,17 +2,38 @@ import "./index.scss";
 import { Tabs, Button } from "antd";
 import Editor from "./component/Editor";
 import { readFileContent } from "./util";
+import { useEffect, useState } from "react";
+import { getFileContentFromUrl } from "@/util";
 
 const { TabPane } = Tabs;
 
 function Sourcemap() {
   console.log("render sourcemap");
+  const [lineNo, setLineNo] = useState(458);
+  const [columnNo, setColumnNo] = useState(11);
+  const [url, setUrl] = useState("http://localhost:3000/static/js/8.chunk.js");
+  useEffect(() => {
+    window.onerror = function (msg, url, lineNo, columnNo) {
+      console.log("**", lineNo, columnNo, url);
+      setLineNo(lineNo);
+      setColumnNo(columnNo);
+      setUrl(url);
+      return false;
+    };
+  }, []);
+  useEffect(async () => {
+    const mapContent =await getFileContentFromUrl(`${url}.map`);
+    sourceMap.SourceMapConsumer.with(mapContent, null, (consumer) => {
+      console.log("**", consumer.originalPositionFor({
+        line: lineNo,
+        column: columnNo,
+      }));
+    });
+    return () => {
+    };
+  }, [lineNo, columnNo, url]);
   function onClickTest_1() {
-    try {
-      throw new Error("test 1...");
-    } catch(err) {
-      console.error(err);
-    }
+    throw new Error("test 1...");
   }
   return (
     <div className="sourcemap">

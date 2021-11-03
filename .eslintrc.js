@@ -36,4 +36,7 @@ module.exports = {
       "version": "detect",
     },
   },
+  "globals": {
+    "sourceMap": true,
+  },
 };
