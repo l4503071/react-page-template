@@ -25,7 +25,7 @@ function Sourcemap() {
   }, []);
   useEffect(async () => {
     console.log("2", lineNo, columnNo, url);
-    if (lineNo < 0 || columnNo < 0 || !!url) {
+    if (lineNo < 0 || columnNo < 0 || !url) {
       return;
     }
     const mapContent = await getFileContentFromUrl(`${url}.map`);
