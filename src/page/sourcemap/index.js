@@ -16,7 +16,6 @@ function Sourcemap() {
   const [result, setResult] = useState("");
   useEffect(() => {
     window.onerror = function (msg, url, lineNo, columnNo) {
-      console.log("1", lineNo, columnNo, url);
       setLineNo(lineNo);
       setColumnNo(columnNo);
       setUrl(url);
@@ -24,24 +23,18 @@ function Sourcemap() {
     };
   }, []);
   useEffect(async () => {
-    console.log("2", lineNo, columnNo, url);
     if (lineNo < 0 || columnNo < 0 || !url) {
       return;
     }
+    console.log("2", lineNo, columnNo, url);
     const mapContent = await getFileContentFromUrl(`${url}.map`);
     sourceMap.SourceMapConsumer.with(mapContent, null, (consumer) => {
-      // console.log(consumer.originalPositionFor({
-      //   line: lineNo,
-      //   column: columnNo,
-      // }));
-      setResult(
-        JSON.stringify(
-          consumer.originalPositionFor({
-            line: lineNo,
-            column: columnNo,
-          })
-        )
-      );
+      const res = consumer.originalPositionFor({
+        line: lineNo,
+        column: columnNo,
+      });
+      console.log(3, consumer.sourceContentFor(res.source));
+      setResult(JSON.stringify(res));
     });
     return () => {};
   }, [lineNo, columnNo, url]);
