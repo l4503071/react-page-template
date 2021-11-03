@@ -1,0 +1,2 @@
+.menu{display:flex;height:50px;align-items:center;justify-content:center;box-shadow:0 3px 5px hsla(0,0%,66.7%,.27);background-color:#fff;margin-bottom:8px}.menu__item{font-size:20px;padding:0 24px;text-decoration:unset}.app{background-color:#f2f2f2;height:100vh;display:flex;flex-direction:column}.app__page{height:0;flex:1 1;display:flex;flex-direction:column}html{box-sizing:border-box}*,:after,:before{box-sizing:inherit}
+/*# sourceMappingURL=main.9847d921.chunk.css.map */
