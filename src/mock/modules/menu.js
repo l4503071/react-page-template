@@ -8,8 +8,8 @@ Mock.mock(/getMenuList/, "get", () => {
         path: "/",
       },
       {
-        name: "应用中心",
-        path: "/application",
+        name: "sourceMap",
+        path: "/sourcemap",
       }
     ],
   };

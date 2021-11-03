@@ -7,9 +7,9 @@ const routes = [
     component: loadable(() => import("../page/home")),
   },
   {
-    path: "/application",
+    path: "/sourcemap",
     exact: true,
-    component: loadable(() => import("../page/application")),
+    component: loadable(() => import("../page/sourcemap")),
   }
 ];
 

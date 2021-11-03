@@ -1,0 +1,26 @@
+.sourcemap {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  flex: 1;
+  height: 0;
+  background-color: white;
+  &__test {
+    flex: 1;
+    display: flex;
+    flex-direction: auto;
+    &__btn {
+      margin-bottom: 8px;
+    }
+    .editor {
+      border: 1px solid gray;
+      flex: 1;
+      height: calc(100% - 40px);
+    }
+  }
+}
+
+// ant 全局样式覆盖
+.ant-tabs-content {
+  height: 100%;
+}
