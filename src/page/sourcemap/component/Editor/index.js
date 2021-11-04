@@ -21,18 +21,21 @@ function Editor({ content, startLine, endLine }) {
           if (startLine > endLine) {
             return;
           }
-          editor.deltaDecorations(
-            [],
-            [
-              {
-                range: new monaco.Range(startLine, 1, endLine, 1), // 开始行，开始列，结束行，结束列
-                options: {
-                  isWholeLine: true,
-                  className: "editor--hightlight",
-                },
-              }
-            ]
-          );
+          setTimeout(() => { // 解决嵌入 弹框 中设置样式失效问题
+            editor.deltaDecorations(
+              [],
+              [
+                {
+                  range: new monaco.Range(startLine, 1, endLine, 1), // 开始行，开始列，结束行，结束列
+                  options: {
+                    isWholeLine: true,
+                    className: "editor--hightlight",
+                  },
+                }
+              ]
+            );
+            editor.revealLineInCenter(Math.ceil((startLine + endLine) / 2));
+          }, 300);
         }}
       />
     </div>

@@ -18,6 +18,9 @@
       height: calc(100% - 40px);
     }
   }
+  &__result {
+    height: 70vh;
+  }
 }
 
 // ant 全局样式覆盖
