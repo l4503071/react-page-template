@@ -1,0 +1,23 @@
+.errortab {
+  height: 100%;
+  &__code {
+    height: 200px;
+  }
+  &__info {
+    display: flex;
+    flex-direction: row;
+    &__left, &__right {
+      width: 50%;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      // align-items: flex-start;
+    }
+    &__btn {
+      margin-bottom: 16px;
+    }
+    &__edtior {
+      flex: 1;
+    }
+  }
+}

@@ -8,22 +8,11 @@
   &__test {
     flex: 1;
     display: flex;
-    flex-direction: auto;
-    &__btn {
-      margin-bottom: 8px;
-    }
-    .editor {
-      border: 1px solid gray;
-      flex: 1;
-      height: calc(100% - 40px);
-    }
-  }
-  &__result {
-    height: 70vh;
   }
 }
 
 // ant 全局样式覆盖
 .ant-tabs-content {
   height: 100%;
+  overflow: auto;
 }
