@@ -26,6 +26,8 @@ const typescriptFormatter = require("react-dev-utils/typescriptFormatter");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
 
+const { commitId } = require("./getCommitId");
+
 const MONACO_DIR = path.resolve(__dirname, "../node_modules/monaco-editor");
 
 const postcssNormalize = require("postcss-normalize");
@@ -529,7 +531,7 @@ module.exports = function (webpackEnv) {
           isEnvProduction
             ? {
               minify: {
-                removeComments: true,
+                removeComments: false,
                 collapseWhitespace: true,
                 removeRedundantAttributes: true,
                 useShortDoctype: true,
@@ -541,7 +543,10 @@ module.exports = function (webpackEnv) {
                 minifyURLs: true,
               },
             }
-            : undefined
+            : undefined,
+          {
+            commitId: commitId,
+          }
         )
       ),
       // Inlines the webpack runtime script. This script is too small to warrant

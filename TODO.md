@@ -20,5 +20,5 @@
 - [ ] 路由切换 loading
 - [ ] 支持刷新当前路由页面
 - [ ] bundle 大小优化
-- [ ] 线上环境 js 文件不加载 sourceMap
-- [ ] html 文件追加当前打包 hashid
+- [x] 线上环境 js 文件不加载 sourceMap
+- [ ] html 文件追加当前打包 hashId
