@@ -12,7 +12,7 @@ import "@/mock";
 ReactDOM.render(
   <ErrorBoundary>
     <Provider store={store}>
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
         <Layout />
       </Router>
     </Provider>
