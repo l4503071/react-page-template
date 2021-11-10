@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom";
 import Layout from "@/layout";
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import store from "@/store";
 import { Provider } from "react-redux";
 import { ErrorBoundary } from "./component/hoc/withErrorBoundary";
