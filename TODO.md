@@ -22,3 +22,4 @@
 - [ ] bundle 大小优化
 - [x] 线上环境 js 文件不加载 sourceMap
 - [x] html 文件追加当前打包 hashId
+- [ ] reducer 支持默认导出全部

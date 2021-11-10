@@ -3,7 +3,7 @@ import { Tabs } from "antd";
 import ErrorTab from "./component/ErrorTab";
 import useErrorListener from "./hook/useErrorListener";
 import { useSelector, useDispatch } from "react-redux";
-import { editConfigList } from "./meta/sourcemapReducer";
+import { editConfigList, editConfigListErrorInfo } from "./meta/sourcemapReducer";
 import { useEffect } from "react";
 import { analyzeSourcemap } from "./util";
 
@@ -32,8 +32,7 @@ function Sourcemap() {
   function onTrigger(name) {
     if (name === "test_1") {
       throw new Error("test_1");
-    }
-    else if (name === "test_2") {
+    } else if (name === "test_2") {
       new Promise(() => {
         throw new Error("test_2");
       });
@@ -45,27 +44,23 @@ function Sourcemap() {
       return item.key === name;
     });
     const result = await analyzeSourcemap(tabConfig.errorInfo);
-    dispatch(editConfigList({
-      key: name,
-      props: {
-        errorResult: {
-          ...result,
+    dispatch(
+      editConfigList({
+        key: name,
+        props: {
+          errorResult: {
+            ...result,
+          },
         },
-      },
-    }));
+      })
+    );
   }
 
   function onInputChange(name, props) {
-    const data = tabConfigList.find(item => item.key === name);
     dispatch(
-      editConfigList({
+      editConfigListErrorInfo({
         key: error.name,
-        props: {
-          errorInfo: {
-            ...data.errorInfo,
-            ...props,
-          },
-        },
+        props,
       })
     );
   }
@@ -76,7 +71,7 @@ function Sourcemap() {
         <h1>说明</h1>
         <p>此页面仅用于测试 source map 功能。</p>
       </div>
-      <Tabs defaultActiveKey="test_2" className="sourcemap__test">
+      <Tabs defaultActiveKey="test_1" className="sourcemap__test">
         {tabConfigList.map((item) => {
           return (
             <TabPane tab={item.name} key={item.key}>

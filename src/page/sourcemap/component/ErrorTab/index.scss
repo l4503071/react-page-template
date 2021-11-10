@@ -11,10 +11,14 @@
       padding: 8px;
       display: flex;
       flex-direction: column;
-      // align-items: flex-start;
+      button + button {
+        margin-left: 8px;
+      }
     }
     &__btn {
       margin-bottom: 16px;
+      display: flex;
+      justify-content: center;
     }
     &__edtior {
       flex: 1;
