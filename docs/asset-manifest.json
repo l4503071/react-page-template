@@ -7,10 +7,10 @@
     "static/js/2.7defe026.chunk.js": "/react-page-template/static/js/2.7defe026.chunk.js",
     "static/js/2.7defe026.chunk.js.map": "/react-page-template/static/js/2.7defe026.chunk.js.map",
     "main.css": "/react-page-template/static/css/main.9847d921.chunk.css",
-    "main.js": "/react-page-template/static/js/main.4f676f9c.chunk.js",
-    "main.js.map": "/react-page-template/static/js/main.4f676f9c.chunk.js.map",
-    "runtime-main.js": "/react-page-template/static/js/runtime-main.8c7033f0.js",
-    "runtime-main.js.map": "/react-page-template/static/js/runtime-main.8c7033f0.js.map",
+    "main.js": "/react-page-template/static/js/main.df60467c.chunk.js",
+    "main.js.map": "/react-page-template/static/js/main.df60467c.chunk.js.map",
+    "runtime-main.js": "/react-page-template/static/js/runtime-main.9ca5105d.js",
+    "runtime-main.js.map": "/react-page-template/static/js/runtime-main.9ca5105d.js.map",
     "static/css/5.4ce90660.chunk.css": "/react-page-template/static/css/5.4ce90660.chunk.css",
     "static/js/5.d4c9ea93.chunk.js": "/react-page-template/static/js/5.d4c9ea93.chunk.js",
     "static/js/5.d4c9ea93.chunk.js.map": "/react-page-template/static/js/5.d4c9ea93.chunk.js.map",
@@ -21,8 +21,8 @@
     "static/js/7.09e5d8cb.chunk.js": "/react-page-template/static/js/7.09e5d8cb.chunk.js",
     "static/js/7.09e5d8cb.chunk.js.map": "/react-page-template/static/js/7.09e5d8cb.chunk.js.map",
     "static/css/8.057db9e6.chunk.css": "/react-page-template/static/css/8.057db9e6.chunk.css",
-    "static/js/8.888ba23f.chunk.js": "/react-page-template/static/js/8.888ba23f.chunk.js",
-    "static/js/8.888ba23f.chunk.js.map": "/react-page-template/static/js/8.888ba23f.chunk.js.map",
+    "static/js/8.49ff9205.chunk.js": "/react-page-template/static/js/8.49ff9205.chunk.js",
+    "static/js/8.49ff9205.chunk.js.map": "/react-page-template/static/js/8.49ff9205.chunk.js.map",
     "static/js/9.764561fd.chunk.js": "/react-page-template/static/js/9.764561fd.chunk.js",
     "static/js/9.764561fd.chunk.js.map": "/react-page-template/static/js/9.764561fd.chunk.js.map",
     "static/js/10.fed006c7.chunk.js": "/react-page-template/static/js/10.fed006c7.chunk.js",
@@ -199,10 +199,10 @@
     "ts.worker.js.map": "/react-page-template/ts.worker.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.8c7033f0.js",
+    "static/js/runtime-main.9ca5105d.js",
     "static/css/6.6ecbc40c.chunk.css",
     "static/js/6.d7fb1cfb.chunk.js",
     "static/css/main.9847d921.chunk.css",
-    "static/js/main.4f676f9c.chunk.js"
+    "static/js/main.df60467c.chunk.js"
   ]
 }

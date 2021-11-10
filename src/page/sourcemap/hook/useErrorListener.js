@@ -15,6 +15,16 @@ export default function () {
       });
       return false; // 返回 true，阻止默认行为，如在 console 中打印错误
     };
+    window.onunhandledrejection = function(e) {
+      const reason = e.reason;
+      setError({
+        msg: reason.message,
+        url: "",
+        lineNo: "",
+        error: reason.stack,
+        name: reason.message,
+      });
+    };
   }, []);
   return {
     error,

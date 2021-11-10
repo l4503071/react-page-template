@@ -33,6 +33,11 @@ function Sourcemap() {
     if (name === "test_1") {
       throw new Error("test_1");
     }
+    else if (name === "test_2") {
+      new Promise(() => {
+        throw new Error("test_2");
+      });
+    }
   }
 
   async function onAnalyze(name) {
@@ -71,7 +76,7 @@ function Sourcemap() {
         <h1>说明</h1>
         <p>此页面仅用于测试 source map 功能。</p>
       </div>
-      <Tabs defaultActiveKey="1" className="sourcemap__test">
+      <Tabs defaultActiveKey="test_2" className="sourcemap__test">
         {tabConfigList.map((item) => {
           return (
             <TabPane tab={item.name} key={item.key}>
