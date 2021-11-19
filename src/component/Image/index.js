@@ -4,7 +4,7 @@ import { useState, useEffect, memo, useRef } from "react";
 import cns from "classnames";
 import { loadingImg, addLazyLoadListener } from "./util/index";
 
-function Image({ src, className, lazy, ...otherProps }) {
+function Image({ src, className, lazy, onLoad, ...otherProps }) {
   const [visible, setVisible] = useState(!lazy); // 图片是否可见 
   const [loading, setLoading] = useState(true); // 图片是否在加载 
   const el = useRef(null);
@@ -23,13 +23,14 @@ function Image({ src, className, lazy, ...otherProps }) {
       }
     };
   }, [lazy]);
-  function onLoad() {
+  function _onLoad() {
     setLoading(false);
+    onLoad();
   }
   const cls = cns(className, "image__real", {
     "image__real--hidden": loading,
   });
-  const imgDom = <img src={src} onLoad={onLoad} className={cls} alt="img" {...otherProps} />;
+  const imgDom = <img src={src} onLoad={_onLoad} className={cls} alt="img" {...otherProps} />;
   return (
     <div ref={el}>
       {visible && imgDom}
@@ -42,6 +43,11 @@ Image.propTypes = {
   src: PropTypes.string,
   lazy: PropTypes.bool,
   className: PropTypes.string,
+  onLoad: PropTypes.func,
+};
+
+Image.defaultProps = {
+  onLoad: () => {},
 };
 
 export default memo(Image);

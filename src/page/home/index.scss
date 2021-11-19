@@ -5,7 +5,6 @@
   flex-direction: column;
   background-color: white;
   &__card {
-    position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -13,10 +12,5 @@
     flex: 1;
     height: 0;
     overflow: scroll;
-    &__badge {
-      position:absolute;
-      right: 0;
-      top: 0;
-    }
   }
 }

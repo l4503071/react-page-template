@@ -5,10 +5,13 @@
 - [x] 提交代码勾子——eslint校验提交代码
 - [x] 图片懒加载
 - [x] 错误上报，sourceMap 分析
-- [ ] 借助 github 接口实现 错误 定位个人
+- [ ] 借助 github 接口实现 错误 定位个人(gihub rest api 目前不支持 blame)
 - [ ] 埋点上报方案
 - [ ] 自动化测试用例
 - [ ] 页面功能优化，例如画廊
+- [ ] 引入react-window https://github.com/bvaughn/react-window
+- [ ] 使用 reselect 优化 useSelect https://react-redux.js.org/api/hooks#useselector
+- [ ] 优化首 UI，支持不登高瀑布流
 
 
 
@@ -22,4 +25,5 @@
 - [ ] bundle 大小优化
 - [x] 线上环境 js 文件不加载 sourceMap
 - [x] html 文件追加当前打包 hashId
-- [ ] reducer 支持默认导出全部
+- [ ] reducer 支持默认导出全部 (导出模块方式暂不支持)
+- [ ] 抽离 selector 到 meta 文件夹下

@@ -8,7 +8,13 @@ export const homeSlice = createSlice({
   },
   reducers: {
     setCardList(state, action) {
-      state.cardList = action?.payload?.list ?? [];
+      state.cardList = action?.payload?.list?.map?.((card) => {
+        return {
+          url: card.url.replace("http://", "https://") + "/" + card.color.slice(1),
+          creator: card.creator,
+          labels: card.labels,
+        };
+      });
     },
     setFilter(state, action) {
       state.filter = action?.payload?.filter;
