@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import axios from "@/util/http";
 
 export const homeSlice = createSlice({
   name: "home",
@@ -24,4 +25,14 @@ export const homeSlice = createSlice({
 
 export default homeSlice.reducer;
 
-export const { setCardList, setFilter } = homeSlice.actions;
+export const { setFilter } = homeSlice.actions;
+
+export const getCardList = () => (dispatch) => {
+  axios.get("/getCardList").then((res) => {
+    if (res?.code !== 0) {
+      return;
+    }
+    dispatch(homeSlice.actions.setCardList({ list: res?.data }));
+  });
+};
+

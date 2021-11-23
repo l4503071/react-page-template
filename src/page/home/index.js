@@ -1,33 +1,21 @@
 import { useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import axios from "@/util/http";
-import { setCardList, setFilter } from "./meta/homeReducer";
+import { getCardList, setFilter } from "./meta/homeReducer";
 import Card from "./component/card";
 import Filter from "./component/filter";
 import "./index.scss";
+import { makeSelectCardList } from "./meta/selector";
 
 export default function Home() {
   console.log("render home");
-  const cardList = useSelector((state) => {
-    return state.home.cardList.filter((card) => {
-      const str = "" + card.name + card.count;
-      return str.includes(state.home.filter);
-    });
-  });
+  const cardList = useSelector(makeSelectCardList());
   const dispatch = useDispatch();
-  const getCardList = useCallback(() => {
-    axios.get("/getCardList").then((res) => {
-      if (res?.code !== 0) {
-        return;
-      }
-      dispatch(setCardList({ list: res?.data }));
-    });
-  }, [dispatch]);
-
-  useEffect(getCardList, [getCardList]);
+  useEffect(() => {
+    dispatch(getCardList());
+  }, [getCardList]);
 
   const onClickChange = useCallback(() => {
-    getCardList();
+    dispatch(getCardList());
   }, [getCardList]);
 
   const onChangeFilter = useCallback(
@@ -44,7 +32,6 @@ export default function Home() {
       </div>
       <div className="home__card">
         {cardList.map((card) => {
-          // card.image 追加 query，是为了测试图片的 懒加载功能
           return <Card key={card.url} creator={card.creator} url={card.url} labels={card.labels} />;
         })}
         {
