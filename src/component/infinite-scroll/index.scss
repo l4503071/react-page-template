@@ -1,0 +1,9 @@
+.infinite-scroll {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  &__load-more {
+    width: 100%;
+    height: 10px;
+  }
+}

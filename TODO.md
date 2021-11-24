@@ -26,4 +26,5 @@
 - [x] 线上环境 js 文件不加载 sourceMap
 - [x] html 文件追加当前打包 hashId
 - [ ] reducer 支持默认导出全部 (导出模块方式暂不支持)
-- [ ] 抽离 selector 到 meta 文件夹下
+- [x] 抽离 selector 到 meta 文件夹下
+- [ ] npm run create 支持 'a-b' 格式

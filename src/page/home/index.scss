@@ -5,12 +5,20 @@
   flex-direction: column;
   background-color: white;
   &__card {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
     flex: 1;
     height: 0;
-    overflow: scroll;
+    padding: 24px;
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    &__loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      font-weight: bold;
+    }
   }
 }
