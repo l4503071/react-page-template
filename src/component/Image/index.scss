@@ -1,4 +1,5 @@
 .image {
+  display: flex;
   &__real {
     transition: opacity 1s;
     &--hidden {

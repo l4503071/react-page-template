@@ -14,7 +14,7 @@ function Card({ url, creator, labels }) {
   return (
     <div className="card">
       <div className="card__top">
-        <Image className="card__img" src={url} onLoad={onLoad} lazy />
+        <Image src={url} onLoad={onLoad} width={300} height={300} lazy />
         {loaded && (
           <div className="card__mask">
             <div className="card__creator" title={creator}>
