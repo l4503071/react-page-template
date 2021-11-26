@@ -1,9 +1,8 @@
-/* eslint-disable no-unused-vars */
 import PropTypes from "prop-types";
 import cns from "classnames";
 import { Blurhash } from "react-blurhash";
 import { useState, useEffect, memo, useRef } from "react";
-import { loadingImg, addLazyLoadListener } from "./util/index";
+import { addLazyLoadListener } from "./util/index";
 import "./index.scss";
 
 function Image({ src, className, lazy, onLoad, width, height, ...otherProps }) {

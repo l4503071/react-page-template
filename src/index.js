@@ -8,6 +8,9 @@ import "normalize.css";
 import "./index.scss";
 import "antd/dist/antd.css";
 import "@/mock";
+import { setupAppear } from "./util/appear";
+
+setupAppear(); // 监听节点的 appear 事件
 
 ReactDOM.render(
   <ErrorBoundary>

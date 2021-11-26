@@ -6,18 +6,18 @@
 - [x] 图片懒加载
 - [x] 错误上报，sourceMap 分析
 - [ ] 借助 github 接口实现 错误 定位个人(gihub rest api 目前不支持 blame)
-- [ ] 埋点上报方案
+- [ ] 埋点上报方案 https://www.npmjs.com/package/appear-polyfill
 - [ ] 自动化测试用例
-- [ ] 页面功能优化，例如画廊
+- [x] 页面功能优化，例如画廊
 - [ ] 引入react-window https://github.com/bvaughn/react-window
-- [ ] 使用 reselect 优化 useSelect https://react-redux.js.org/api/hooks#useselector
-- [ ] 优化首 UI，支持不登高瀑布流
+- [x] 使用 reselect 优化 useSelect https://react-redux.js.org/api/hooks#useselector
+- [ ] 支持不等高瀑布流
 - [x] 图片 blur hash
 
 
 
 # Bug list
-- [ ] 首页 卡片 高度不固定
+- [x] 首页 卡片 高度不固定
 
 
 # 优化

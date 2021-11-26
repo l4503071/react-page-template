@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCardList, setFilter } from "./meta/homeReducer";
@@ -37,10 +36,10 @@ export default function Home() {
         <Filter onClick={onClickChange} onChange={onChangeFilter} />
       </div>
       <div className="home__card">
-        <InfiniteScroll loadMore={loadMore}>
+        <InfiniteScroll loadMore={loadMore} onAppear={() => {}}>
           <div className="home__card__list">
-            {cardList.map((card) => {
-              return <Card key={card.url} creator={card.creator} url={card.url} labels={card.labels} />;
+            {cardList.map((card, index) => {
+              return <Card key={card.url} creator={card.creator} url={card.url} labels={card.labels} eventData={{ url: card.url, index }} />;
             })}
             {
               // 首/末 行对齐，补齐数量大于屏幕显示最大数量即可

@@ -19,4 +19,10 @@ async function download(url) {
   URL.revokeObjectURL(imageURL);
 }
 
-export { getFileContentFromUrl, download };
+function checkSupportIO() {
+  // 考虑兼容性可以参考: https://github.com/w3c/IntersectionObserver/blob/main/polyfill/README.md
+  const name = "IntersectionObserver";
+  return name in window && `${name}Entry` in window;
+}
+
+export { getFileContentFromUrl, download, checkSupportIO };
