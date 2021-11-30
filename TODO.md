@@ -6,7 +6,7 @@
 - [x] 图片懒加载
 - [x] 错误上报，sourceMap 分析
 - [ ] 借助 github 接口实现 错误 定位个人(gihub rest api 目前不支持 blame)
-- [ ] 埋点上报方案 https://www.npmjs.com/package/appear-polyfill
+- [x] 埋点上报方案 https://www.npmjs.com/package/appear-polyfill
 - [ ] 自动化测试用例
 - [x] 页面功能优化，例如画廊
 - [ ] 引入react-window https://github.com/bvaughn/react-window
@@ -29,3 +29,4 @@
 - [ ] reducer 支持默认导出全部 (导出模块方式暂不支持)
 - [x] 抽离 selector 到 meta 文件夹下
 - [ ] npm run create 支持 'a-b' 格式
+- [ ] 埋点窗口点击特效增加上下移动效果

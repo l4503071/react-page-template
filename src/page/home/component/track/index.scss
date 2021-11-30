@@ -1,0 +1,45 @@
+.track {
+  &__btn {
+    position: fixed;
+    right: 20px;
+    bottom: 80px;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 4px 8px;
+  }
+  &__close {
+    user-select: none;
+    width: 27px;
+    height: 27px;
+    font-size: 26px;
+    color: #f4364c;
+    position: fixed;
+    right: 16px;
+    bottom: 386px;
+    z-index: 1;
+  }
+  &__content {
+    position: fixed;
+    right: 28px;
+    bottom: 120px;
+    box-shadow: rgb(0 0 0 / 35%) 0 6px 100px 0;
+    background-color: white;
+    border-radius: 8px;
+    width: 480px;
+    height: 280px;
+    transition: all 0.4s linear;
+    padding: 32px 0;
+    overflow-y: auto;
+    &--hidden {
+      visibility: hidden;
+      opacity: 0;
+    }
+    &--visible {
+      visibility: visible;
+      opacity: 1;
+    }
+    &__item {
+      padding-bottom: 10px;
+    }
+  }
+}

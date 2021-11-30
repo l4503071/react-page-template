@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCardList, setFilter } from "./meta/homeReducer";
 import Card from "./component/card";
 import Filter from "./component/filter";
+import Track from "./component/track";
 import { makeSelectCardList } from "./meta/selector";
 import InfiniteScroll from "@/component/infinite-scroll";
 import "./index.scss";
@@ -53,6 +54,7 @@ export default function Home() {
           {cardList.length > 0 && <div className="home__card__loading">loading...</div>}
         </InfiniteScroll>
       </div>
+      <Track />
     </div>
   );
 }
