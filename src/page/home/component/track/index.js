@@ -1,8 +1,9 @@
-import { Tag, Timeline } from "antd";
+import { Tag } from "antd";
 import { memo, useRef, useState, useEffect } from "react";
 import { BarChartOutlined, CloseCircleFilled } from "@ant-design/icons";
 import { useTrackData } from "@/util/track";
 import { formatDateTime } from "@/util";
+import { FixedSizeList as List } from "react-window";
 import cns from "classnames";
 import "./index.scss";
 
@@ -11,39 +12,33 @@ function Track() {
   const { list } = useTrackData();
   const listRef = useRef(null);
   useEffect(() => {
-    listRef.current.scrollTo({
-      top: listRef.current.scrollHeight,
-      behavior: "smooth",
-    });
+    listRef.current.scrollToItem(list.length);
   }, [list]);
   const cls = cns("track__content", {
     "track__content--visible": visible,
     "track__content--hidden": !visible,
   });
+
   return (
     <div className="track">
-      <div className={cls} ref={listRef}>
+      <div className={cls}>
         <CloseCircleFilled
           className="track__close"
           onClick={() => {
             setVisible(false);
           }}
         />
-        <div>
-          <Timeline mode={"left"}>
-            {list.map((item, index) => {
-              return (
-                <Timeline.Item
-                  key={index}
-                  label={formatDateTime(item.time)}
-                  className="track__content__item"
-                >
-                  {item.msg}
-                </Timeline.Item>
-              );
-            })}
-          </Timeline>
-        </div>
+        <List ref={listRef} height={260} itemCount={list.length} itemSize={30} width={300}>
+          {({ index, style }) => {
+            const cls = index % 2 === 0 ? "track__content__item--odd" : "";
+            return (
+              <div className={cls + " track__content__item"} style={style}>
+                <div>{formatDateTime(list[index].time)}</div>
+                <div>{list[index].msg}</div>
+              </div>
+            );
+          }}
+        </List>
       </div>
       <Tag
         icon={<BarChartOutlined />}

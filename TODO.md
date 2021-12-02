@@ -9,10 +9,11 @@
 - [x] 埋点上报方案 https://www.npmjs.com/package/appear-polyfill
 - [ ] 自动化测试用例
 - [x] 页面功能优化，例如画廊
-- [ ] 引入react-window https://github.com/bvaughn/react-window
+- [x] 引入react-window https://github.com/bvaughn/react-window
 - [x] 使用 reselect 优化 useSelect https://react-redux.js.org/api/hooks#useselector
 - [ ] 支持不等高瀑布流
 - [x] 图片 blur hash
+- [ ] 开发环境 - 分路由启动
 
 
 
