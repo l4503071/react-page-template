@@ -24,6 +24,11 @@ class Trigger {
     this.list = [...this.list, data];
     this.trigger();
   }
+
+  setList(list) {
+    this.list = list;
+    this.trigger();
+  }
 }
 
 const instance = new Trigger();
@@ -35,6 +40,7 @@ export function useTrackData() {
   }, []);
   return {
     list,
+    setList: instance.setList.bind(instance),
   };
 }
 
