@@ -13,7 +13,7 @@
 - [x] 使用 reselect 优化 useSelect https://react-redux.js.org/api/hooks#useselector
 - [ ] 支持不等高瀑布流
 - [x] 图片 blur hash
-- [ ] 开发环境 - 分路由启动
+- [ ] 开发环境 - 分路由启
 
 
 
@@ -32,3 +32,4 @@
 - [ ] npm run create 支持 'a-b' 格式
 - [x] 埋点窗口点击特效增加上下移动效果
 - [x] 埋点数据支持清空
+- [ ] 构建缓存
