@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const xxxSlice = createSlice({
+export const slice = createSlice({
   name: "xxx",
   initialState: {
     count: 0,
@@ -12,6 +12,6 @@ export const xxxSlice = createSlice({
   },
 });
 
-export default xxxSlice.reducer;
+export default slice.reducer;
 
-export const { setCount } = xxxSlice.actions;
+export const { setCount } = slice.actions;
